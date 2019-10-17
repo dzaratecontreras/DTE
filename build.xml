@@ -122,7 +122,7 @@
 		</fileset>
 	</xmlbean>
 
-	<javac destdir="${classes.dir}" srcdir="${src.dir}/cl/nic/dte" fork="yes" debug="on" debuglevel="${debug.list}">
+	<javac destdir="${classes.dir}" srcdir="${src.dir}/cl/nic/dte" fork="yes" debug="on" debuglevel="${debug.list}" encoding="UTF-8">
 		<classpath>
 			<pathelement location="${classes.dir}" />
 			<fileset dir="${lib.dir}">
@@ -210,7 +210,7 @@
 		</fileset>
 	</xmlbean>
 
-	<javac destdir="${classes.dir}" srcdir="${src.dir}/cl/nic/dte" fork="yes" debug="on" debuglevel="${debug.list}">
+	<javac destdir="${classes.dir}" srcdir="${src.dir}/cl/nic/dte" fork="yes" debug="on" debuglevel="${debug.list}" encoding="UTF-8">
 		<classpath>
 			<pathelement location="${classes.dir}" />
 			<fileset dir="${lib.dir}">
@@ -231,7 +231,7 @@
 </target>
 
 <target name="xmlbuild-boletas" depends="prepare">
-	<javac destdir="${classes.dir}" srcdir="${src.dir}/cl/nic/dte" fork="yes" debug="on" debuglevel="${debug.list}">
+	<javac destdir="${classes.dir}" srcdir="${src.dir}/cl/nic/dte" fork="yes" debug="on" debuglevel="${debug.list}" encoding="UTF-8">
 		<classpath>
 			<pathelement location="${classes.dir}" />
 			<fileset dir="${lib.dir}">
@@ -261,7 +261,7 @@
 
 
 <target name="xmlbuild-libro-boletas" depends="prepare">
-	<javac destdir="${classes.dir}" srcdir="${src.dir}/cl/nic/dte" fork="yes" debug="on" debuglevel="${debug.list}">
+	<javac destdir="${classes.dir}" srcdir="${src.dir}/cl/nic/dte" fork="yes" debug="on" debuglevel="${debug.list}" encoding="UTF-8">
 		<classpath>
 			<pathelement location="${classes.dir}" />
 			<fileset dir="${lib.dir}">
@@ -289,7 +289,7 @@
 </target>
 
 <target name="xmlbuild-libro-guia" depends="prepare">
-	<javac destdir="${classes.dir}" srcdir="${src.dir}/cl/nic/dte" fork="yes" debug="on" debuglevel="${debug.list}">
+	<javac destdir="${classes.dir}" srcdir="${src.dir}/cl/nic/dte" fork="yes" debug="on" debuglevel="${debug.list}" encoding="UTF-8">
 		<classpath>
 			<pathelement location="${classes.dir}" />
 			<fileset dir="${lib.dir}">
@@ -315,7 +315,7 @@
 </target>
 
 <target name="xmlbuild-consumo-folios" depends="prepare">
-	<javac destdir="${classes.dir}" srcdir="${src.dir}/cl/nic/dte" fork="yes" debug="on" debuglevel="${debug.list}">
+	<javac destdir="${classes.dir}" srcdir="${src.dir}/cl/nic/dte" fork="yes" debug="on" debuglevel="${debug.list}" encoding="UTF-8">
 		<classpath>
 			<pathelement location="${classes.dir}" />
 			<fileset dir="${lib.dir}">
@@ -344,7 +344,7 @@
 
 
 <target name="xmlbuild-libro-CV" depends="prepare">
-	<javac destdir="${classes.dir}" srcdir="${src.dir}/cl/nic/dte" fork="yes" debug="on" debuglevel="${debug.list}">
+	<javac destdir="${classes.dir}" srcdir="${src.dir}/cl/nic/dte" fork="yes" debug="on" debuglevel="${debug.list}" encoding="UTF-8">
 		<classpath>
 			<pathelement location="${classes.dir}" />
 			<fileset dir="${lib.dir}">
@@ -371,7 +371,7 @@
 	</xmlbean>
 </target>
 <target name="xmlbuild" depends="prepare">
-	<javac destdir="${classes.dir}" srcdir="${src.dir}/cl/nic/dte" fork="yes" debug="on" debuglevel="${debug.list}">
+	<javac destdir="${classes.dir}" srcdir="${src.dir}/cl/nic/dte" fork="yes" debug="on" debuglevel="${debug.list}" encoding="UTF-8">
 		<classpath>
 			<pathelement location="${classes.dir}" />
 			<fileset dir="${lib.dir}">
@@ -431,7 +431,7 @@
 
 
 <target name="compile" depends="xmlbuild,xmlbuild-boletas,xmlbuild-libro-boletas,xmlbuild-libro-CV,xmlbuild-consumo-folios,xmlbuild-libro-guia">
-	<javac destdir="${classes.dir}" debug="on" debuglevel="${debug.list}">
+	<javac destdir="${classes.dir}" debug="on" debuglevel="${debug.list}" encoding="UTF-8">
 		<classpath>
 			<fileset dir="${lib.dir}">
 				<include name="*.jar" />
