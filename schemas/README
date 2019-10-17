@@ -4,10 +4,10 @@ ConsumoFolio_v10.xsd
 17 Noviembre 2009, Sin Modificar
 
 DTE_v10.xsd
-17 Noviembre 2009, Sin Modificar
+30 Mayo 2011, Modificado: ver detalle en archivo
 
 EnvioBOLETA_v11.xsd
-17 Noviembre 2009, Sin Modificar
+23 Agosto 2011, Modificado: ver detalle en archivo
 
 EnvioDTE_v10.xsd
 17 Noviembre 2009, Sin Modificar
@@ -25,10 +25,10 @@ LceSiiTypes_v10.xsd
 17 Noviembre 2009, Sin Modificar
 
 LibroBOLETA_v10.xsd
-17 Noviembre 2009, Sin Modificar
+14 Junio 2010, Modificado: ver detalle en archivo
 
 LibroCV_v10.xsd
-17 Noviembre 2009, Sin Modificar
+03 Marzo 2011, Modificado: ver detalle en archivo
 
 LibroGuia_v10.xsd
 17 Noviembre 2009, Sin Modificar
@@ -37,7 +37,7 @@ Recibos_v10.xsd
 17 Noviembre 2009, Sin Modificar
 
 RespSII_v10.xsd
-17 Noviembre 2009, Sin Modificar
+27 Julio 2011, Modificado: ver detalle en archivo
 
 RespSIILibros_v10.xsd
 04 Enero 2010, Modificado: ver detalle en archivo
@@ -46,7 +46,7 @@ RespuestaEnvioDTE_v10.xsd
 17 Noviembre 2009, Sin Modificar
 
 SiiTypes_v10.xsd
-17 Noviembre 2009, Sin Modificar
+30 Abril 2011, Sin Modificar
 
 xmldsignature_v10.xsd
 17 Noviembre 2009, 

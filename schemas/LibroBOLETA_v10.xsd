@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <xs:schema targetNamespace="http://www.sii.cl/SiiDte" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:SiiDte="http://www.sii.cl/SiiDte" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<!-- 
-      Ultima modificacion : 22 de Abril de 2005 - 09:27 Hrs.
+      Modificacion : 22 de Abril de 2005 - 09:27 Hrs.
+      Modificacion : 28 de Abril de 2010 - 14:58 Hrs.
        -->
 	<xs:element name="LibroBoleta">
 		<xs:annotation>
@@ -169,6 +170,11 @@
 																					<xs:documentation>Venta y Servicio</xs:documentation>
 																				</xs:annotation>
 																			</xs:enumeration>
+																			<xs:enumeration value="4">
+																				<xs:annotation>
+																					<xs:documentation>Boleta de Espectáculo emitida por  cuenta de Terceros</xs:documentation>
+																				</xs:annotation>
+																			</xs:enumeration>
 																		</xs:restriction>
 																	</xs:simpleType>
 																</xs:element>
@@ -216,6 +222,16 @@
 																	<xs:annotation>
 																		<xs:documentation>Total Valor a Pagar</xs:documentation>
 																	</xs:annotation>
+																</xs:element>
+																<xs:element name="TotTicket" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Total de Ticket informados en el Segmento</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="SiiDte:MontoType">
+																			<xs:totalDigits value="7"/>
+																		</xs:restriction>
+																	</xs:simpleType>
 																</xs:element>
 															</xs:sequence>
 														</xs:complexType>
@@ -281,6 +297,11 @@
 																					<xs:documentation>Venta y Servicio</xs:documentation>
 																				</xs:annotation>
 																			</xs:enumeration>
+																			<xs:enumeration value="4">
+																				<xs:annotation>
+																					<xs:documentation>Boleta de Espectáculo emitida por  cuenta de Terceros</xs:documentation>
+																				</xs:annotation>
+																			</xs:enumeration>
 																		</xs:restriction>
 																	</xs:simpleType>
 																</xs:element>
@@ -338,6 +359,16 @@
 																	<xs:annotation>
 																		<xs:documentation>Total Valor a Pagar</xs:documentation>
 																	</xs:annotation>
+																</xs:element>
+																<xs:element name="TotTicket" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Total de Ticket informados en el Periodo</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="SiiDte:MontoType">
+																			<xs:totalDigits value="7"/>
+																		</xs:restriction>
+																	</xs:simpleType>
 																</xs:element>
 															</xs:sequence>
 														</xs:complexType>
@@ -403,6 +434,11 @@
 													<xs:enumeration value="3">
 														<xs:annotation>
 															<xs:documentation>Venta y Servicio</xs:documentation>
+														</xs:annotation>
+													</xs:enumeration>
+													<xs:enumeration value="4">
+														<xs:annotation>
+															<xs:documentation>Boleta de Espectáculo emitida por  cuenta de Terceros</xs:documentation>
 														</xs:annotation>
 													</xs:enumeration>
 												</xs:restriction>
@@ -482,6 +518,16 @@
 											<xs:annotation>
 												<xs:documentation>Valor Total a Pagar</xs:documentation>
 											</xs:annotation>
+										</xs:element>
+										<xs:element name="TotTicketBoleta" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Total de Ticket informados en la Boleta</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="SiiDte:MontoType">
+													<xs:totalDigits value="3"/>
+												</xs:restriction>
+											</xs:simpleType>
 										</xs:element>
 									</xs:sequence>
 								</xs:complexType>

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Mauricio (Servicios de Impuestos Internos) -->
 <!--Esquema para documentos DTE.
 Fecha Actualizacion:  25/05/07 15:00
 
@@ -10,6 +9,12 @@ FechaHoraType :  FechaType + hora entre 00:00 y 23:59
 Fecha Actualizacion:  19-12-2007 16:21
 
 Totales Exportacion : acepta minimo 0 (incluye detalle)
+
+Fecha Actualizacion:  30-05-2011 12:00
+
+Descuento Recargo Global : se incorporar restricción en Tipo de Movimiento
+			   para que sea dato de largo 1
+
   -->
 <xs:schema targetNamespace="http://www.sii.cl/SiiDte" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:SiiDte="http://www.sii.cl/SiiDte" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:include schemaLocation="SiiTypes_v10.xsd"/>
@@ -1671,6 +1676,8 @@ según tabla Países aduana</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
+													<xs:minLength value="1"/>
+													<xs:maxLength value="1"/>
 													<xs:enumeration value="D">
 														<xs:annotation>
 															<xs:documentation>Descuento</xs:documentation>

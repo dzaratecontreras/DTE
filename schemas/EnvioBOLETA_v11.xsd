@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Zulema Olguín Traro (Servicios de Impuestos Internos) -->
 <xs:schema targetNamespace="http://www.sii.cl/SiiDte" xmlns:SiiDte="http://www.sii.cl/SiiDte" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsignature_v10.xsd"/>
 	<!--
-	  Modificacion : 16 de Abril del  2007. 
+	  Modificacion		 : 16 de Abril del  2007. 
+         Nueva version		: EnvioBOLETA_v11.xsd
+         Modificacion 		: 22 de Abril del  2010. 
          Nueva version		: EnvioBOLETA_v11.xsd
       -->
 	<xs:element name="EnvioBOLETA">
@@ -156,6 +157,11 @@
 															<xs:enumeration value="3">
 																<xs:annotation>
 																	<xs:documentation>Boleta de Ventas y Servicio</xs:documentation>
+																</xs:annotation>
+															</xs:enumeration>
+															<xs:enumeration value="4">
+																<xs:annotation>
+																	<xs:documentation>Boleta de Espectáculo emitida por  cuenta de Terceros</xs:documentation>
 																</xs:annotation>
 															</xs:enumeration>
 														</xs:restriction>
@@ -483,6 +489,34 @@
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
+									<xs:element name="ItemEspectaculo" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Indica si el ítem es :
+01: TICKET
+02: VALOR SERVICIO</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:positiveInteger">
+												<xs:maxInclusive value="2"/>
+												<xs:totalDigits value="2"/>
+												<xs:enumeration value="01">
+													<xs:annotation>
+														<xs:documentation>Producto o Servicio es Exento o No Afecto</xs:documentation>
+													</xs:annotation>
+												</xs:enumeration>
+												<xs:enumeration value="02">
+													<xs:annotation>
+														<xs:documentation>El Producto o Servicio NO ES Facturable</xs:documentation>
+													</xs:annotation>
+												</xs:enumeration>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="RUTMandante" type="SiiDte:RUTType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Rut de la Empresa Mandante de la Boleta</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="NmbItem">
 										<xs:annotation>
 											<xs:documentation>Nombre del Item</xs:documentation>
@@ -492,6 +526,118 @@
 												<xs:maxLength value="80"/>
 											</xs:restriction>
 										</xs:simpleType>
+									</xs:element>
+									<xs:element name="InfoTicket" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Informacion de la entrada</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="FolioTicket">
+													<xs:annotation>
+														<xs:documentation>Corresponde a la numeración única para el evento.</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:positiveInteger">
+															<xs:totalDigits value="6"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+												<xs:element name="FchGenera">
+													<xs:annotation>
+														<xs:documentation>Corresponde a la fecha y hora de generación del ticket
+(AAAA-MM-DDThh:mm:ss)</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:dateTime">
+															<xs:minInclusive value="2010-03-10T00:00:00"/>
+															<xs:maxInclusive value="2050-12-31T23:59:59"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+												<xs:element name="NmbEvento">
+													<xs:annotation>
+														<xs:documentation>Nombre del Espectáculo</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="80"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+												<xs:element name="TpoTiket">
+													<xs:annotation>
+														<xs:documentation>Tipo de ticket, Por ejemplo: Adulto, Niño, etc</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="10"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+												<xs:element name="CdgEvento">
+													<xs:annotation>
+														<xs:documentation>Código asociado al Evento</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="5"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+												<xs:element name="FchEvento">
+													<xs:annotation>
+														<xs:documentation>Fecha y hora de realización del evento AAAA-MM-DDThh:mm:ss)</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:dateTime">
+															<xs:minInclusive value="2010-03-10T00:00:00"/>
+															<xs:maxInclusive value="2050-12-31T23:59:59"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+												<xs:element name="LugarEvento">
+													<xs:annotation>
+														<xs:documentation>Dirección o identificación del recinto donde se realizará el  Espectáculo</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="80"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+												<xs:element name="UbicEvento">
+													<xs:annotation>
+														<xs:documentation>Sector/Sección de la ubicación en el evento</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="20"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+												<xs:element name="FilaUbicEvento" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>Fila correspondiente a la Ubicación en el evento</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="3"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+												<xs:element name="AsntoUbicEvento" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>N° de Asiento correspondiente a la Ubicación en el evento</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="3"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
 									</xs:element>
 									<xs:element name="DscItem" minOccurs="0">
 										<xs:annotation>
@@ -522,6 +668,48 @@
 										<xs:annotation>
 											<xs:documentation>Precio Unitario del Item en Pesos</xs:documentation>
 										</xs:annotation>
+									</xs:element>
+									<xs:element name="DescuentoPct" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Porcentaje de Descuento</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="SiiDte:PctType">
+												<xs:minInclusive value="0.00"/>
+												<xs:maxInclusive value="100.00"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="DescuentoMonto" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Monto de Descuento</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:nonNegativeInteger">
+												<xs:totalDigits value="18"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="RecargoPct" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Porcentaje de Recargo</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="SiiDte:PctType">
+												<xs:maxInclusive value="100.00"/>
+												<xs:minInclusive value="0.00"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="RecargoMonto" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Monto de Recargo</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:nonNegativeInteger">
+												<xs:totalDigits value="18"/>
+											</xs:restriction>
+										</xs:simpleType>
 									</xs:element>
 									<xs:element name="MontoItem" type="SiiDte:MontoType">
 										<xs:annotation>
@@ -730,6 +918,26 @@
 										<xs:simpleType>
 											<xs:restriction base="xs:string">
 												<xs:maxLength value="90"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="CodVndor" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Código del Vendedor establecido por la Empresa. Puede estar asociado a INTERNET</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="8"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="CodCaja" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Código de la caja establecido por la Empresa</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="8"/>
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
@@ -1049,6 +1257,17 @@
 			<xs:totalDigits value="18"/>
 			<xs:fractionDigits value="6"/>
 			<xs:minExclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PctType">
+		<xs:annotation>
+			<xs:documentation>Monto de Porcentaje ( 3 y 2)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="5"/>
+			<xs:fractionDigits value="2"/>
+			<xs:minInclusive value="0.01"/>
+			<xs:maxInclusive value="999.99"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
