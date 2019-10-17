@@ -9,7 +9,7 @@ ImpAdicDTEType: elimina codigo 29 para DTE
 
 Fecha Actualizacion:  30/05/2011 12:00
 
-Se incorpora restricción en DineroPorcentajeType para que sea dato de largo 1
+Se incorpora restricciï¿½n en DineroPorcentajeType para que sea dato de largo 1
 
 -->
 <xs:schema targetNamespace="http://www.sii.cl/SiiDte" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.sii.cl/SiiDte" elementFormDefault="qualified" attributeFormDefault="unqualified">
@@ -300,8 +300,8 @@ Se incorpora restricción en DineroPorcentajeType para que sea dato de largo 1
 			</xs:enumeration>
 			<xs:enumeration value="29">
 				<xs:annotation>
-					<xs:documentation>Recuperación Impuesto Específico diesel Transportistas  Para transportistas de carga
- Art 2° Ley N°19.764/2001</xs:documentation>
+					<xs:documentation>Recuperaciï¿½n Impuesto Especï¿½fico diesel Transportistas  Para transportistas de carga
+ Art 2ï¿½ Ley Nï¿½19.764/2001</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="30">
@@ -583,7 +583,7 @@ Se incorpora restricción en DineroPorcentajeType para que sea dato de largo 1
 	</xs:simpleType>
 	<xs:simpleType name="MailType">
 		<xs:annotation>
-			<xs:documentation>Dirección email</xs:documentation>
+			<xs:documentation>Direcciï¿½n email</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="80"/>
@@ -610,7 +610,7 @@ Se incorpora restricción en DineroPorcentajeType para que sea dato de largo 1
 	</xs:simpleType>
 	<xs:simpleType name="NroResolType">
 		<xs:annotation>
-			<xs:documentation>Número de Resolución</xs:documentation>
+			<xs:documentation>Nï¿½mero de Resoluciï¿½n</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger">
 			<xs:totalDigits value="6"/>
@@ -618,7 +618,7 @@ Se incorpora restricción en DineroPorcentajeType para que sea dato de largo 1
 	</xs:simpleType>
 	<xs:simpleType name="RznSocLargaType">
 		<xs:annotation>
-			<xs:documentation>Razón Social (max 100)</xs:documentation>
+			<xs:documentation>Razï¿½n Social (max 100)</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="100"/>
@@ -626,7 +626,7 @@ Se incorpora restricción en DineroPorcentajeType para que sea dato de largo 1
 	</xs:simpleType>
 	<xs:simpleType name="RznSocCortaType">
 		<xs:annotation>
-			<xs:documentation>Razón Social (max 40)</xs:documentation>
+			<xs:documentation>Razï¿½n Social (max 40)</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="40"/>
@@ -635,7 +635,7 @@ Se incorpora restricción en DineroPorcentajeType para que sea dato de largo 1
 	</xs:simpleType>
 	<xs:simpleType name="DireccSoloDTEType">
 		<xs:annotation>
-			<xs:documentation>Dirección (maz 60)</xs:documentation>
+			<xs:documentation>Direcciï¿½n (maz 60)</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="60"/>
@@ -643,7 +643,7 @@ Se incorpora restricción en DineroPorcentajeType para que sea dato de largo 1
 	</xs:simpleType>
 	<xs:simpleType name="DireccType">
 		<xs:annotation>
-			<xs:documentation>Dirección (max 80)</xs:documentation>
+			<xs:documentation>Direcciï¿½n (max 80)</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="80"/>

@@ -209,7 +209,7 @@ public class DTEDefTypeExtensionHandler {
 		return null;
 	}
 
-	private static VerifyResult verifyTimbre(Exportaciones doc)
+	public static VerifyResult verifyTimbre(Exportaciones doc)
 			throws NoSuchAlgorithmException, InvalidKeySpecException,
 			InvalidKeyException, SignatureException {
 
@@ -312,7 +312,7 @@ public class DTEDefTypeExtensionHandler {
 		}
 	}
 
-	private static VerifyResult verifyTimbre(Documento doc)
+	public static VerifyResult verifyTimbre(Documento doc)
 			throws NoSuchAlgorithmException, InvalidKeySpecException,
 			InvalidKeyException, SignatureException {
 
@@ -412,7 +412,7 @@ public class DTEDefTypeExtensionHandler {
 		}
 	}
 
-	private static VerifyResult verifyTimbre(Liquidacion doc)
+	public static VerifyResult verifyTimbre(Liquidacion doc)
 			throws NoSuchAlgorithmException, InvalidKeySpecException,
 			InvalidKeyException, SignatureException {
 
@@ -515,7 +515,7 @@ public class DTEDefTypeExtensionHandler {
 		}
 	}
 
-	private static void timbrar(Documento doc,
+	public static void timbrar(Documento doc,
 			DTEDefType.Documento.TED.DD.CAF caf, PublicKey pubKey,
 			PrivateKey pKey) throws TimbreException, NoSuchAlgorithmException,
 			SignatureException, InvalidKeyException {
@@ -595,7 +595,7 @@ public class DTEDefTypeExtensionHandler {
 		
 	}
 
-	private static void timbrar(Exportaciones doc,
+	public static void timbrar(Exportaciones doc,
 			DTEDefType.Exportaciones.TED.DD.CAF caf, PublicKey pubKey,
 			PrivateKey pKey) throws TimbreException, NoSuchAlgorithmException,
 			SignatureException, InvalidKeyException {
@@ -665,7 +665,7 @@ public class DTEDefTypeExtensionHandler {
 		frmt.setByteArrayValue(sig.sign());
 	}
 
-	private static void timbrar(Liquidacion doc,
+	public static void timbrar(Liquidacion doc,
 			DTEDefType.Liquidacion.TED.DD.CAF caf, PublicKey pubKey,
 			PrivateKey pKey) throws TimbreException, NoSuchAlgorithmException,
 			SignatureException, InvalidKeyException {
