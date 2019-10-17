@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Mauricio (Servicios de Impuestos Internos) -->
 <!--Esquema para tipos de datos generales.
 Fecha Actualizacion:  25/05/07 15:00
 
@@ -7,6 +6,11 @@ Se incorporan dos nuevos Tipos de datos :
 FechaType		:  Fecha entre 2000-01-01 y 2050-12-31
 FechaHoraType :  FechaType + hora entre 00:00 y 23:59
 ImpAdicDTEType: elimina codigo 29 para DTE
+
+Fecha Actualizacion:  30/05/2011 12:00
+
+Se incorpora restricción en DineroPorcentajeType para que sea dato de largo 1
+
 -->
 <xs:schema targetNamespace="http://www.sii.cl/SiiDte" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.sii.cl/SiiDte" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:simpleType name="DOCType">
@@ -590,6 +594,8 @@ ImpAdicDTEType: elimina codigo 29 para DTE
 			<xs:documentation>Unidad en que se expresa el Valor</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="1"/>
 			<xs:enumeration value="%">
 				<xs:annotation>
 					<xs:documentation>El valor se Expresa como Porcentaje</xs:documentation>
